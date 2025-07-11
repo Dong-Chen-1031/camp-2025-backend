@@ -81,3 +81,13 @@ def get_todo(id: int) -> TodoItem:
             detail="Todo item not found"
             )
     return todo_list[id]
+
+from fastapi.middleware.cors import CORSMiddleware
+ 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
